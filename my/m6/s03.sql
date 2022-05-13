@@ -15,6 +15,9 @@ create table constrained (
     foreign key (f) references car(car_id)
 );
 
+SELECT *
+FROM other_contrained;
+
 -- Error Code: 1048. Column 'b' cannot be null
 insert into constrained (a, b, c, d, e, f, g) values (null, null, null, null, null, null, null);
 

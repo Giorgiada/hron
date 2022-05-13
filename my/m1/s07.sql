@@ -31,9 +31,21 @@ order by salary desc;
 -- positional notation
 select first_name, last_name
 from employee order by 1, 2;
+-- ti orfino per la prima colonna indicata su (first name) e la seconda (last name)
 
+SELECT first_name, last_name
+FROM employee 
+ORDER BY first_name, last_name;
+
+SELECT  last_name,first_name
+FROM employee 
+ORDER BY last_name, first_name;
+ 
 -- ...
 select first_name, last_name, hired
 from employee
 where first_name like 'c%'
 order by 3 asc;
+
+
+

@@ -42,6 +42,13 @@ select first_name, last_name
 from employee
 where last_name like '_ull%';
 
+-- %x% = in tutte le posizioni
+-- %x =  finire
+-- x% = inizia
+-- _x% = underscore per le posizioni , 1 underscore per trovare la x in seconda posizione
+-- ___x% = x alla quarta posizione
+-- '___' = con tre lettere 
+
 -- "like" a string having an "m" anywhere
 select name
 from region
@@ -136,3 +143,18 @@ where name not in (null) or name in (null);
 select *
 from region
 where name is not null or name is null;
+
+SELECT*
+FROM employee
+WHERE commission is null;
+
+SELECT commission
+FROM employee
+LIMIT 6;
+
+SELECT ifnull (commission, 'n/a') as commission
+FROM employee;
+
+SELECT concat (first_name, ' ' , last_name) as name, salary + salary * ifnull(commission,0)  as monthly
+from employee;
+

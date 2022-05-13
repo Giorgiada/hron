@@ -1,8 +1,8 @@
 -- examples on select
 use hron;
 
--- select all
-select *
+-- select = select all --> cioè mostrami tutta la tabella regione
+select *                      
 from region;
 
 -- selecting a single column and a single row (if exists)
@@ -14,8 +14,11 @@ where region_id = 1;
 select manager_id
 from employee;
 
--- selecting only non-duplicated values
+-- SELECT DISTINCT = selecting only non-duplicated values
 select distinct manager_id
+from employee;
+
+select *
 from employee;
 
 -- select with changes on values and column names
@@ -28,7 +31,7 @@ from job;
 
 -- the dual table and the function current_date
 select current_date;
--- from dual;
+-- from dual; 
 
 select sqrt(25);
 
@@ -39,7 +42,7 @@ from country;
 -- limit to get a result set with a specified max size
 select first_name, last_name
 from employee
-limit 10;
+limit 10, 10;
 
 -- the second block of ten employees
 select first_name, last_name
@@ -50,3 +53,23 @@ limit 10, 10;
 select first_name, last_name
 from employee
 limit 100, 10;
+
+SELECT concat (first_name, " ", last_name, " ", phone) as "Name & phone", salary
+FROM employee
+WHERE first_name = "John";
+
+SELECT *
+FROM employee
+WHERE manager_id = "100";
+
+SELECT *
+FROM employee
+WHERE salary <3000 and employee_id > 160;
+
+SELECT *
+FROM employee
+WHERE department_id =5 or department_id=3;
+
+SELECT *
+FROM employee
+WHERE department_id=3 AND hired < "2021-01-01";

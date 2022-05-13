@@ -11,6 +11,10 @@ update service
 set name = right(name, 24), location_id = 3
 where service_id = 20;
 
+UPDATE service
+SET NAME = "Hello", location_id = 4
+WHERE service_id = 20;
+
 -- updating (potentially) more rows
 update service
 set name = 'N/A'

@@ -8,14 +8,18 @@ select s.*, l.city
 from service s left outer join location l
 using (location_id);
 
+-- INSERIRE NUOVA RIGA
 -- plain insert
-insert into service (service_id, name, location_id) values
+INSERT INTO service (service_id, name, location_id) VALUES
 	(20, 'Mayday Shifty Solutions', 2);
 
 -- multiline insert
-insert into service (service_id, name, location_id) values
+INSERT INTO service (service_id, name, location_id) VALUES
 	(21, 'Old Gondor Raw Equipment', 3),
 	(22, 'Rohan Leather', 4);
+    
+    INSERT INTO service (service_id, name, location_id) VALUES
+    (7, 'Accenture', 2);
 
 -- nullable column could be skipped
 insert into service (service_id, name) values

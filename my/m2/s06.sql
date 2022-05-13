@@ -29,3 +29,18 @@ select e.first_name, e.last_name, d.name as department
 from employee e left join department d
 using (department_id)
 where e.last_name = 'Grant';
+
+-- indirizzo dipartimenti 
+-- INNER JOIN = fa vedere SOLO i dipartimenti che hanno un indirizzo
+SELECT  d.name, l.city, l.street_address
+FROM location l JOIN department d
+ON d.location_id = l.location_id; 
+
+-- OUTER JOIN per far vedere i dipartimenti che non hanno indirizzo, e che verranno mostrati con valore NULL
+SELECT  d.name, l.city, l.street_address
+-- RIGHT perchè department è a destra  
+FROM location l RIGHT OUTER JOIN department d
+ON d.location_id = l.location_id; 
+
+
+
